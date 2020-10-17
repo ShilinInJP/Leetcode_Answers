@@ -1,0 +1,15 @@
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode reverse = head;
+        ListNode temp;
+        head = null;
+        while (reverse!=null)
+        {
+            temp = reverse.next;
+            reverse.next = head;  //头插法
+            head = reverse;
+            reverse = temp;
+        }  
+        return head;
+    }
+}
