@@ -1,13 +1,13 @@
 class Solution {
-    public ListNode reverseList(ListNode head) {
+    public ListNode reverseList(ListNode head) {                       
         ListNode reverse = head;
         ListNode temp;
         head = null;
         while (reverse!=null)
         {
-            temp = reverse.next;
-            reverse.next = head;  //头插法
-            head = reverse;
+            temp = reverse.next;                                
+            reverse.next = head;  //头插法     
+            head = reverse; //这里传入的是node 和 node.next
             reverse = temp;
         }  
         return head;
