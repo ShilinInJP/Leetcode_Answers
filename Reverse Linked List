@@ -6,7 +6,7 @@ class Solution {
         while (reverse!=null)
         {
             temp = reverse.next;                                
-            reverse.next = head;  //头插法     
+            reverse.next = head;  /reverse 每次获得一个原本链表的next，然后将反序的head放在next的后面 实现倒放  
             head = reverse; //这里传入的是node 和 node.next
             reverse = temp;
         }  
