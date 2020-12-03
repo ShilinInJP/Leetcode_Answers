@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/search-in-rotated-sorted-array/
+//方法一 编序 时间复杂度 O(n)
 class Solution {
     public int search(int[] nums, int target) {
         int j = -1;
@@ -7,5 +9,31 @@ class Solution {
             }
         }
         return j;
+    }
+}
+//方法二 二分法 时间复杂度2*O(logN)
+
+class Solution{
+    public int search(int[] nums,int target){
+        //Block1 找到零点的位置
+        int low = 0, high = nums.length-1;
+        int mid =0;
+        while (low<high){
+            mid = (low+high)/2;
+            if A[mid]>A[high]{  // [4 6 7 8 0 1 2 3] 证明最小值在中间点到
+                low = mid;
+            }
+        else  high = mid;
+        }
+        //最终low = high = 0点的index  
+   
+        //block2 找target的位置
+        if (target < nums[mid]||target >nums[mid-1]) return -1;
+        low = 0, high = nums.length -1;
+        while (low < high){
+           if (target = nums[mid]) return mid;
+           else if (target > nums[low]) high = mid; 
+           else low = mid;
+        }
     }
 }
