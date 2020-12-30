@@ -5,6 +5,8 @@ class Solution {
         
         for (int i = 0; i < n; i++) {
             // 判断集合中是否存在该元素
+            //set contains 
+            //set add
             if (set.contains(nums[i])) 
                 return nums[i];
             set.add(nums[i]);
