@@ -1,0 +1,22 @@
+lass Solution {
+    public int minArray(int[] numbers) {
+        int left,right,mid;
+        left = 0;
+        right = numbers.length-1;
+
+        while(left<right){
+            mid = (right+left)/2;             
+            if(numbers[mid] < numbers[right]){   //单独判断最右的三种情况 
+                right = mid;
+            }
+            else if (numbers[mid] > numbers[right]){
+                left = mid+1;
+            }
+            else {
+                right -= 1;
+            }
+        }
+        
+        return numbers[right];
+    }
+}
